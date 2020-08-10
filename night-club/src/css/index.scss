@@ -1,3 +1,10 @@
 @import "base";
 @import "hero";
 @import "nav";
+@import "constrictor";
+
+main {
+    & > section {
+        text-align: center;
+    }
+}

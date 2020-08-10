@@ -1,8 +1,9 @@
 @import "constrictor";
 
 nav {
-    position: relative;
+    position: sticky;
     top: 0;
+    z-index: 100;
     width: 100%;
     box-sizing: border-box;
     padding: 20px;
@@ -48,7 +49,7 @@ nav {
 
         li {
             a {
-                color: white;
+                color: #fff;
                 text-decoration: none;
                 text-transform: uppercase;
                 display: inline-block;
@@ -65,7 +66,7 @@ nav {
                         width: 100%;
                         bottom: 0;
                         left: 0;
-                        background: linear-gradient(to right, #000, #000, rgba(#ff2a70, 0.77), #000, #000);
+                        background: linear-gradient(to right, #0000, #0000, rgba(#ff2a70, 0.77), #0000, #0000);
                     }
                 }
             }

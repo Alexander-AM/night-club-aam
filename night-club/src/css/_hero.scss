@@ -20,13 +20,24 @@
         height: 100%;
         position: relative;
         z-index: 10;
+        perspective: 600px;
 
         .logo, .bottom-bar {
             width: 40em;
         }
 
+        .logo {
+            margin-bottom: 10px;
+            animation: logo-fold 1.25s ease-in-out;
+        }
+
         .bottom-bar {
             height: 5em;
+        }
+
+        .good-time, .bottom-bar {
+            opacity: 0;
+            animation: subtitle-appear 0.5s ease-in-out 1s forwards;
         }
     }
 
@@ -37,5 +48,26 @@
         color: #fff;
         font-size: 21px;
         letter-spacing: 22px;
+    }
+}
+
+
+@keyframes logo-fold {
+    from {
+        opacity: 0;
+        transform: rotateX(90deg);
+    } to {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes subtitle-appear {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    } to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
