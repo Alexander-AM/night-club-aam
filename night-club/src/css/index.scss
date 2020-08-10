@@ -7,4 +7,53 @@ main {
     & > section {
         text-align: center;
     }
+
+    .section-8 {
+        background-color: #030303;
+        padding: 40px;
+
+        h3 {
+            line-height: 1.1;
+            color: #fff;
+            font-weight: 500;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin: 0 0 5px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ff2a70;
+        }
+
+        form {
+            margin-top: 40px;
+        }
+
+        input[type="text"] {
+            border: 0;
+            background-color: transparent;
+            border-bottom: 2px solid #fff;
+            padding: 10px 20px;
+            width: 300px;
+            margin-right: 25px;
+            color: #fff;
+            outline: none;
+
+            &::placeholder {
+                color: #fff;
+            }
+        }
+
+        button {
+            border: 0;
+            background-color: transparent;
+            border-top: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            padding: 10px 20px;
+            color: #fff;
+            outline: none;
+            text-transform: uppercase;
+        }
+    }
 }
