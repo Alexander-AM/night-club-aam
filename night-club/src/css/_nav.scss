@@ -60,13 +60,36 @@ nav {
                     position: relative;
 
                     &::before {
-                        position: absolute;
                         content: "";
+                        position: absolute;
                         height: 2px;
                         width: 100%;
                         bottom: 0;
                         left: 0;
                         background: linear-gradient(to right, #0000, #0000, rgba(#ff2a70, 0.77), #0000, #0000);
+                    }
+
+                    &[href="/gallery"], &[href="/blog"] {
+                        &::after {
+                            border-left-color: #ff2a70;
+                            border-top-color: #ff2a70;
+                        }
+                    }
+                }
+
+                &[href="/gallery"], &[href="/blog"] {
+                    &::after {
+                        content: "";
+                        width: 0;
+                        height: 0;
+                        border-width: 3px;
+                        border-style: solid;
+                        border-color: #f0f0f0;
+                        border-right-color: transparent;
+                        border-bottom-color: transparent;
+                        position: absolute;
+                        transform: rotate(225deg) translate(-10px, 0px);
+                        transform-origin: center;
                     }
                 }
             }
