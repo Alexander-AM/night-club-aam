@@ -1,0 +1,74 @@
+@import "constrictor";
+
+nav {
+    position: relative;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    border-bottom: 1px solid #ff2a70;
+    border-top: 1px solid #ff2a70;
+    background-color: #000; 
+    
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-color: #ff2a70;
+        border-left: #0000;
+        border-top: #0000;
+        border-width: 20px;
+        border-style: solid;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-color: #ff2a70;
+        border-right: #0000;
+        border-bottom: #0000;
+        border-width: 20px;
+        border-style: solid;
+    }
+
+    .constrictor {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    ul {
+        margin: 0;
+        list-style: none;
+        padding: 0;
+        display: flex;
+
+        li {
+            a {
+                color: white;
+                text-decoration: none;
+                text-transform: uppercase;
+                display: inline-block;
+                padding: 10px 15px;
+
+                &:hover, &.active {
+                    color: #ff2a70;
+                    position: relative;
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        height: 2px;
+                        width: 100%;
+                        bottom: 0;
+                        left: 0;
+                        background: linear-gradient(to right, #000, #000, rgba(#ff2a70, 0.77), #000, #000);
+                    }
+                }
+            }
+        }
+    }
+}
