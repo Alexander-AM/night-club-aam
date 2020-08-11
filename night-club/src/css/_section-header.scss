@@ -12,6 +12,12 @@
         width: 100%;
         bottom: 0;
         left: 0;
-        background: linear-gradient(to right, #0000, rgba(#ff2a70, 0.77), #0000);
+        background: linear-gradient(to right, #0000, #0000, rgba(#ff2a70, 0.77), #0000, #0000);
+    }
+
+    &.wide {
+        &::before {
+            background: linear-gradient(to right, #0000, rgba(#ff2a70, 0.77), #0000);
+        }
     }
 }

@@ -1,6 +1,7 @@
 @import "https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap";
 @import url(fontawesome.min.css);
 @import url(brands.min.css);
+@import url(solid.min.css);
 .constrictor {
   margin: 0 auto;
   width: 100%;
@@ -300,10 +301,129 @@ nav {
     width: 100%;
     bottom: 0;
     left: 0;
+    background: linear-gradient(to right, #0000, #0000, rgba(255, 42, 112, 0.77), #0000, #0000); }
+  .section-header.wide::before {
     background: linear-gradient(to right, #0000, rgba(255, 42, 112, 0.77), #0000); }
 
-main > section {
-  text-align: center; }
+main .section-1 {
+  padding: 40px; }
+  main .section-1 .images {
+    display: flex;
+    padding: 50px 0; }
+    main .section-1 .images .image-container:nth-child(2) {
+      margin: 0 20px; }
+    main .section-1 .images .image-container {
+      position: relative;
+      overflow: hidden; }
+      main .section-1 .images .image-container img {
+        vertical-align: bottom; }
+      main .section-1 .images .image-container .image-cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(3, 3, 3, 0);
+        border-color: #ff2a70;
+        border-style: solid;
+        border-width: 0;
+        box-sizing: border-box;
+        color: #fff;
+        transition: background-color 0.15s ease;
+        display: flex;
+        justify-content: center; }
+        main .section-1 .images .image-container .image-cover i {
+          font-size: 1.5rem;
+          opacity: 0;
+          transform: scale(0.9);
+          width: 70px;
+          height: 70px;
+          border-radius: 5px;
+          color: #ff2a70;
+          border: 1.5px solid #ff2a70;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: 110px; }
+        main .section-1 .images .image-container .image-cover h3 {
+          opacity: 0;
+          transform: scale(0.75);
+          position: absolute;
+          top: 185px; }
+        main .section-1 .images .image-container .image-cover p {
+          opacity: 0;
+          transform: translateX(20px);
+          position: absolute;
+          top: 240px; }
+      main .section-1 .images .image-container::before, main .section-1 .images .image-container::after {
+        content: "";
+        border-width: 40px;
+        border-color: #ff2a70;
+        border-style: solid;
+        position: absolute;
+        transition: transform 0.2s ease;
+        z-index: 10; }
+      main .section-1 .images .image-container::before {
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        top: 0;
+        left: 0;
+        transform: translateY(-100%); }
+      main .section-1 .images .image-container::after {
+        border-left-color: transparent;
+        border-top-color: transparent;
+        bottom: 0;
+        right: 0;
+        transform: translateY(100%); }
+      main .section-1 .images .image-container:hover .image-cover {
+        background-color: rgba(3, 3, 3, 0.9);
+        border-top-width: 1px;
+        border-bottom-width: 1px; }
+        main .section-1 .images .image-container:hover .image-cover i, main .section-1 .images .image-container:hover .image-cover h3 {
+          opacity: 1;
+          transform: scale(1); }
+        main .section-1 .images .image-container:hover .image-cover i {
+          transition: opacity 0.1s ease-out 0.2s, transform 0.2s ease-out 0.2s; }
+        main .section-1 .images .image-container:hover .image-cover h3 {
+          transition: opacity 0.2s ease-out 0.2s, transform 1s ease-out 0.2s; }
+        main .section-1 .images .image-container:hover .image-cover p {
+          transition: opacity 1.3s ease-out 0.2s, transform 1.3s ease-out 0.2s;
+          opacity: 1;
+          transform: translateX(0); }
+      main .section-1 .images .image-container:hover::before {
+        transform: translateY(0); }
+      main .section-1 .images .image-container:hover::after {
+        transform: translateY(0); }
+
+main .section-2 {
+  position: relative;
+  padding: 25px; }
+  main .section-2::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("/assets/img/footerbg.jpg");
+    opacity: 0.1; }
+
+main .section-3 {
+  padding: 25px; }
+
+main .section-6 {
+  position: relative;
+  padding: 25px; }
+  main .section-6::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("/assets/img/footerbg.jpg");
+    opacity: 0.1; }
 
 main .section-8 {
   background-color: #030303;
@@ -331,3 +451,9 @@ main .section-8 {
     outline: none; }
     main .section-8 input[type="text"]::placeholder {
       color: #fff; }
+
+main .theme-coloured {
+  color: #ff2a70; }
+
+main > section {
+  text-align: center; }
