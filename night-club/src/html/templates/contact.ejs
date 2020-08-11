@@ -12,14 +12,14 @@
             <div class="constrictor">
                 <section class="side-by-side">
                     <section class="left-side">
-                        <form>
-                            <input type="text" name="input-name" id="input-name" placeholder="Your name">
-                            <input type="text" name="input-email" id="input-email" placeholder="Your email">
-                            <input type="text" name="input-website" id="input-website" placeholder="Your website">
-                            <textarea name="input-comment" id="input-comment" cols="30" rows="10" placeholder="Your comment"></textarea>
+                        <form id="message-form">
+                            <input type="text" name="name" id="message-input-name" placeholder="Your name">
+                            <input type="text" name="email" id="message-input-email" placeholder="Your email">
+                            <input type="text" name="website" id="message-input-website" placeholder="Your website">
+                            <textarea name="comment" id="message-input-comment" cols="30" rows="10" placeholder="Your comment"></textarea>
 
                             <div class="button-wrapper">
-                                <button>Submit</button>
+                                <button id="message-input-submit">Submit</button>
                             </div>
                         </form>
                     </section>
@@ -68,5 +68,7 @@
         </main>
 
         <%- include ../partials/footer %>
+        
+        <script src="/assets/js/contact.js"></script>
     </body>
 </html>

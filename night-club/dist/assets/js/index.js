@@ -4,15 +4,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     //-- Newsletter subscription --//
     const newsletterSubscribeBtnDOM = document.querySelector("#newsletter-input-subscribe");
-    const newsletterEmailTextDOM = document.querySelector("#newsletter-input-email");
+    const newsletterInputEmailDOM = document.querySelector("#newsletter-input-email");
     const newsletterFormDOM = document.querySelector("#newsletter-form");
 
-    const emailRegex = /(?:[^\s]+)@(?:[^\s\.]+)\.[A-z](?:[A-z]+)/g;
+    const emailRegex = /(?:[^\s]+)@(?:[^\s\.]+)\.[A-z](?:[A-z]+)/;
 
     newsletterSubscribeBtnDOM.addEventListener("click", (e) => {
         e.preventDefault();
         
-        if(emailRegex.test(newsletterEmailTextDOM.value)) {
+        if(emailRegex.test(newsletterInputEmailDOM.value)) {
             const data = new URLSearchParams();
 
             for (const pair of new FormData(newsletterFormDOM)) {
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 body: data
             })
             .then(() => {
-                newsletterEmailTextDOM.value = "";
+                newsletterInputEmailDOM.value = "";
                 alert("Succesfully signed up.");
             });
         } else {
