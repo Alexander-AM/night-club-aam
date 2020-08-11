@@ -287,6 +287,21 @@ nav {
     .constrictor {
       max-width: 1500px; } }
 
+.section-header {
+  position: relative;
+  display: inline-block;
+  padding: 15px 0;
+  text-transform: uppercase;
+  font-weight: 400; }
+  .section-header::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, #0000, rgba(255, 42, 112, 0.77), #0000); }
+
 main > section {
   text-align: center; }
 

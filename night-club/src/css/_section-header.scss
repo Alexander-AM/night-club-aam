@@ -1,0 +1,17 @@
+.section-header {
+    position: relative;
+    display: inline-block;
+    padding: 15px 0;
+    text-transform: uppercase;
+    font-weight: 400;
+
+    &::before {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to right, #0000, rgba(#ff2a70, 0.77), #0000);
+    }
+}
