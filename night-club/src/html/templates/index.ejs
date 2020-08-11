@@ -13,8 +13,8 @@
                     <div class="image-container">
                         <img src="/assets/img/content/thumb1.jpg">
                         <div class="image-cover">
-                            <i class="fas fa-glass-cheers"></i>
-                            <h3>Bar</h3>
+                            <i class="fas fa-male"></i>
+                            <h3>Night Club</h3>
                             <p>
                                 Lorem ipsum...
                             </p>
@@ -24,8 +24,8 @@
                     <div class="image-container">
                         <img src="/assets/img/content/reastaurant_1.jpg">
                         <div class="image-cover">
-                            <i class="fas fa-glass-cheers"></i>
-                            <h3>Bar</h3>
+                            <i class="fas fa-utensils"></i>
+                            <h3>Restaurant</h3>
                             <p>
                                 Lorem ipsum...
                             </p>
@@ -62,15 +62,17 @@
                     <h3>Want the latest club news</h3>
                     <p>Subscribe to our newsletter and never miss a <a href="/">Event</a></p>
 
-                    <form>
-                        <input type="text" name="" id="" placeholder="Enter Your Email">
-                        <button>Subscribe</button>
+                    <form id="newsletter-form">
+                        <input type="text" name="email" id="newsletter-input-email" placeholder="Enter Your Email">
+                        <button id="newsletter-input-subscribe">Subscribe</button>
                     </form>
                 </div>
             </section>
         </main>
 
         <%- include ../partials/footer %>
+
+        <script src="/assets/js/index.js"></script>
     </body>
 </html>
 

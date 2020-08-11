@@ -23,6 +23,7 @@ main {
                 
                 img {
                     vertical-align: bottom;
+                    height: 100%;
                 }
 
                 .image-cover {
@@ -59,7 +60,7 @@ main {
 
                     h3 {
                         opacity: 0;
-                        transform: scale(0.75);
+                        transform: scale(0.9);
                         position: absolute;
                         top: 185px;
                     }
@@ -139,6 +140,7 @@ main {
     .section-2 {
         position: relative;
         padding: 25px;
+        background-color: #030303;
 
         &::before {
             content: "";
@@ -159,6 +161,7 @@ main {
     .section-6 {
         position: relative;
         padding: 25px;
+        background-color: #030303;
 
         &::before {
             content: "";

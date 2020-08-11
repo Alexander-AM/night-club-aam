@@ -94,7 +94,7 @@ footer {
 
 body {
   background-color: #030303;
-  background-image: url("/assets/img/main_bg.png");
+  background-image: url("/assets/img/pattern_bg.jpg");
   font-family: "Ubuntu", sans-serif;
   margin: 0; }
   body address {
@@ -316,7 +316,8 @@ main .section-1 {
       position: relative;
       overflow: hidden; }
       main .section-1 .images .image-container img {
-        vertical-align: bottom; }
+        vertical-align: bottom;
+        height: 100%; }
       main .section-1 .images .image-container .image-cover {
         position: absolute;
         top: 0;
@@ -348,7 +349,7 @@ main .section-1 {
           top: 110px; }
         main .section-1 .images .image-container .image-cover h3 {
           opacity: 0;
-          transform: scale(0.75);
+          transform: scale(0.9);
           position: absolute;
           top: 185px; }
         main .section-1 .images .image-container .image-cover p {
@@ -398,7 +399,8 @@ main .section-1 {
 
 main .section-2 {
   position: relative;
-  padding: 25px; }
+  padding: 25px;
+  background-color: #030303; }
   main .section-2::before {
     content: "";
     width: 100%;
@@ -414,7 +416,8 @@ main .section-3 {
 
 main .section-6 {
   position: relative;
-  padding: 25px; }
+  padding: 25px;
+  background-color: #030303; }
   main .section-6::before {
     content: "";
     width: 100%;
