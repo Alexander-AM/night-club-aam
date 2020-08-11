@@ -91,6 +91,26 @@ footer {
     footer .post .post-date {
       color: #ff2a70; }
 
+#loader {
+  background-color: #030303;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 1s ease; }
+  #loader img {
+    transition: opacity 1s ease 1s; }
+  #loader.remove {
+    pointer-events: none;
+    background-color: rgba(3, 3, 3, 0); }
+    #loader.remove img {
+      opacity: 0; }
+
 body {
   background-color: #030303;
   background-image: url("/assets/img/pattern_bg.jpg");

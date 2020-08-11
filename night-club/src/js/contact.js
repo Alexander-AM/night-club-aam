@@ -46,4 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if(!websiteExists) alert("A website is required");
         if(!commentExists) alert("A comment is required");
     });
+
+
+
+
+    finishedLoading = true;
 });
