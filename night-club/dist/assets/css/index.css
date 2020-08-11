@@ -102,11 +102,11 @@ footer {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  transition: background-color 1s ease; }
+  justify-content: center; }
   #loader img {
-    transition: opacity 1s ease 1s; }
+    transition: opacity 0.5s ease 1.5s; }
   #loader.remove {
+    transition: background-color 2s ease;
     pointer-events: none;
     background-color: rgba(3, 3, 3, 0); }
     #loader.remove img {
@@ -183,13 +183,15 @@ body {
     .hero .logo-wrapper .logo, .hero .logo-wrapper .bottom-bar {
       width: 40em; }
     .hero .logo-wrapper .logo {
-      margin-bottom: 10px;
-      animation: logo-fold 1.5s ease-in-out; }
+      margin-bottom: 10px; }
     .hero .logo-wrapper .bottom-bar {
       height: 5em; }
     .hero .logo-wrapper .good-time, .hero .logo-wrapper .bottom-bar {
-      opacity: 0;
-      animation: subtitle-appear 0.5s ease-in-out 1s forwards; }
+      opacity: 0; }
+  .hero.animate .logo {
+    animation: logo-fold 1.5s ease-in-out; }
+  .hero.animate .good-time, .hero.animate .bottom-bar {
+    animation: subtitle-appear 0.5s ease-in-out 1s forwards; }
   .hero .good-time {
     line-height: 1.1;
     font-weight: 100;

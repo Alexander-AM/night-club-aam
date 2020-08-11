@@ -31,4 +31,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             alert("Invalid email");
         }
     });
+
+
+    finishedLoading = true;
+    document.querySelector(".hero").classList.add("animate");
 });

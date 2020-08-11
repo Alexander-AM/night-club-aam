@@ -7,7 +7,7 @@ const loop = () => {
         loaderDOM.classList.add("remove");
         setTimeout(() => {
             loaderDOM.remove();
-        }, 2000);
+        }, 2500);
     }
 
     if(!finishedLoading && !loaderDOM.classList.contains("remove")) {

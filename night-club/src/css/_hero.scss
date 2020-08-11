@@ -28,7 +28,6 @@
 
         .logo {
             margin-bottom: 10px;
-            animation: logo-fold 1.5s ease-in-out;
         }
 
         .bottom-bar {
@@ -37,6 +36,15 @@
 
         .good-time, .bottom-bar {
             opacity: 0;
+        }
+    }
+
+    &.animate {
+        .logo {
+            animation: logo-fold 1.5s ease-in-out;
+        }
+
+        .good-time, .bottom-bar {
             animation: subtitle-appear 0.5s ease-in-out 1s forwards;
         }
     }
