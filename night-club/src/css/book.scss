@@ -23,18 +23,20 @@ main {
         .table-wrapper {
             width: 100%;
             position: relative;
-
+            
             img {
                 width: 100%;
                 vertical-align: bottom;
             }
-
+            
             .table-number {
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 color: white;
                 transform: translate(-50%, -50%);
+                padding: 25%;
+                cursor: pointer;
             }
         }
 

@@ -57,12 +57,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     await fetch("http://localhost:4000/events")
     .then((e) => e.json())
     .then((e) => {
+        console.log(new Date(e[0].eventDate));
         for(let i = 0; i < e.length; i++) {
-            const eventDateTimeArr = e[i].eventDate.split("T");
-            const eventDateSplitArr = eventDateTimeArr[0].split("-");
-            const eventTimeArr = eventDateTimeArr[1].split(".")[0].split(":");
-            const eventTimeHour = eventTimeArr[0];
-            const eventTimeMinute = eventTimeArr[1];
+            const date = new Date(e[i].eventDate);
 
             const eventsSliderItemTemplate = `
             <div class="events-slider-item">
@@ -78,8 +75,8 @@ document.addEventListener("DOMContentLoaded", async () => {
                         </div>
                     </section>
                     <section class="event-post-lower">
-                        <p class="event-post-date">${eventDateSplitArr[2]} ${MONTHS[parseInt(eventDateSplitArr[1])]}</p>
-                        <p class="event-post-time">${eventTimeHour <= 12 ? eventTimeHour : eventTimeHour - 12}:${eventTimeMinute} ${eventTimeHour <= 12 ? "AM" : "PM"}</p>
+                        <p class="event-post-date">${date.getDate()} ${MONTHS[date.getMonth()]}</p>
+                        <p class="event-post-time">${date.getHours() <= 12 ? date.getHours() : date.getHours() - 12}:${date.getMinutes().toString().length == 1 ? "0" : ""}${date.getMinutes()} ${date.getHours() <= 12 ? "AM" : "PM"}</p>
                         <p class="event-post-location">${e[i].location}</p>
                     </section>
                 </article>
