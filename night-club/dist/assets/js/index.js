@@ -42,6 +42,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     eventsSliderControlsDOM.addEventListener("click", (e) => {
         if(e.target.classList.contains("events-slider-button")) {
+            clearInterval(eventsSliderLoop);
+            eventsSliderLoop = setInterval(eventsSliderLoopFunc, 1000 * 5);    
+
             eventsSliderActiveDOM.classList.remove("active");
 
             eventsSliderActiveDOM = e.target;

@@ -470,6 +470,20 @@ main .section-2 {
               border-width: 0;
               box-sizing: border-box;
               transition: background-color 0.2s ease; }
+              main .section-2 .events-slider-wrapper .events-slider .events-slider-item .event-post .event-post-upper .event-post-cover .event-post-book {
+                display: inline-block;
+                text-decoration: none;
+                position: absolute;
+                background-color: #ff2a70;
+                color: white;
+                border: 0;
+                padding: 10px 25px;
+                top: 110px;
+                left: 50%;
+                text-transform: capitalize;
+                font-weight: 600;
+                transform: translateX(-50%) translateY(calc(-100% - 110px));
+                transition: transform 0.2s ease; }
             main .section-2 .events-slider-wrapper .events-slider .events-slider-item .event-post .event-post-upper .event-post-info {
               position: absolute;
               bottom: 0;
@@ -510,6 +524,8 @@ main .section-2 {
               border-top-width: 1px;
               border-bottom-width: 1px;
               background-color: rgba(3, 3, 3, 0.5); }
+              main .section-2 .events-slider-wrapper .events-slider .events-slider-item .event-post .event-post-upper:hover .event-post-cover .event-post-book {
+                transform: translateX(-50%) translateY(0px); }
             main .section-2 .events-slider-wrapper .events-slider .events-slider-item .event-post .event-post-upper:hover .event-post-info {
               transform: translateY(0); }
             main .section-2 .events-slider-wrapper .events-slider .events-slider-item .event-post .event-post-upper img {

@@ -193,6 +193,22 @@ main {
                                 border-width: 0;
                                 box-sizing: border-box;
                                 transition: background-color 0.2s ease;
+
+                                .event-post-book {
+                                    display: inline-block;
+                                    text-decoration: none;
+                                    position: absolute;
+                                    background-color: #ff2a70;
+                                    color: white;
+                                    border: 0;
+                                    padding: 10px 25px;
+                                    top: 110px;
+                                    left: 50%;
+                                    text-transform: capitalize;
+                                    font-weight: 600;
+                                    transform: translateX(-50%) translateY(calc(-100% - 110px));
+                                    transition: transform 0.2s ease;
+                                }
                             }
 
                             .event-post-info  {
@@ -248,6 +264,10 @@ main {
                                     border-top-width: 1px;
                                     border-bottom-width: 1px;
                                     background-color: rgba(#030303, 0.5);
+
+                                    .event-post-book {
+                                        transform: translateX(-50%) translateY(0px);
+                                    }
                                 }
 
                                 .event-post-info {
