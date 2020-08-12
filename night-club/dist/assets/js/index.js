@@ -33,6 +33,49 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
 
+    //-- Section 2, slider --//
+    let eventsSliderActiveDOM = document.querySelector(".events-slider-button.active");
+    let eventsSliderSlide = 0;
+    
+    const eventsSliderDOM = document.querySelector(".events-slider");
+    const eventsSliderControlsDOM = document.querySelector(".events-slider-controls");
+
+    eventsSliderControlsDOM.addEventListener("click", (e) => {
+        if(e.target.classList.contains("events-slider-button")) {
+            eventsSliderActiveDOM.classList.remove("active");
+
+            eventsSliderActiveDOM = e.target;
+
+            eventsSliderSlide = parseInt(eventsSliderActiveDOM.dataset.val);
+            eventsSliderActiveDOM.classList.add("active");
+
+            eventsSliderDOM.style.transform = `translateX(-${eventsSliderSlide * 100}%)`;
+        }
+    });
+
+    eventsSliderDOM.addEventListener("mouseenter", () => {
+        clearInterval(eventsSliderLoop);
+    });
+
+    eventsSliderDOM.addEventListener("mouseleave", () => {
+        eventsSliderLoop = setInterval(eventsSliderLoopFunc, 1000 * 5);    
+    });
+
+    const eventsSliderLoopFunc = () => {
+        eventsSliderActiveDOM.classList.remove("active");
+
+        eventsSliderSlide++;
+        if(eventsSliderSlide >= eventsSliderControlsDOM.children.length) eventsSliderSlide = 0;
+        eventsSliderActiveDOM = eventsSliderControlsDOM.children[eventsSliderSlide];
+
+        eventsSliderActiveDOM.classList.add("active");
+        eventsSliderDOM.style.transform = `translateX(-${eventsSliderSlide * 100}%)`;
+    };
+
+    let eventsSliderLoop = setInterval(eventsSliderLoopFunc, 1000 * 5);
+    
+
+    //-- Finished loading --//
     finishedLoading = true;
     document.querySelector(".hero").classList.add("animate");
 });

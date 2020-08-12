@@ -1,0 +1,13 @@
+--- Teknologier ---
+Til dette projekt har jeg valgt at bruge EJS, Gulp og Sass.
+Jeg valgte EJS på grund af de modulære systemer.
+Jeg valgte Sass på grund af de modulære systemer og CSS embedding.
+Jeg valgte Gulp fordi jeg havde brugt den før i sammenhæng med EJS og Sass. Det hjalp også med at flytte færdige filer.
+
+--- Teknisk dokumentation ---
+
+
+--- "Soft" dokumentation ---
+
+
+--- Arbejdsprocess ---
