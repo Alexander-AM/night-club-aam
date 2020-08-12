@@ -139,11 +139,11 @@ body {
     text-transform: uppercase; }
     body button:hover {
       cursor: pointer; }
-  body input[type="text"], body textarea {
+  body input[type="text"], body input[type="date"], body textarea {
     border: 1px solid rgba(255, 255, 255, 0.37);
     padding: 20px 20px;
     background-color: transparent; }
-    body input[type="text"]::placeholder, body textarea::placeholder {
+    body input[type="text"]::placeholder, body input[type="date"]::placeholder, body textarea::placeholder {
       color: rgba(255, 255, 255, 0.5); }
   body h1 {
     letter-spacing: 0.075em;

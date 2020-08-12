@@ -274,7 +274,29 @@ nav {
     background: linear-gradient(to right, #0000, rgba(255, 42, 112, 0.77), #0000); }
 
 main .constrictor {
-  padding: 40px; }
+  padding: 60px 40px 80px 40px; }
+
+main .book-title {
+  text-transform: uppercase;
+  font-size: 2rem; }
+
+main .table-picker {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 75px 0;
+  margin-bottom: 75px; }
+  main .table-picker .table-wrapper {
+    width: 100%;
+    position: relative; }
+    main .table-picker .table-wrapper img {
+      width: 100%;
+      vertical-align: bottom; }
+    main .table-picker .table-wrapper .table-number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: white;
+      transform: translate(-50%, -50%); }
 
 main .title-area {
   width: 100%;
@@ -304,35 +326,7 @@ main .side-by-side {
   main .side-by-side .right-side {
     padding-left: 15px; }
 
-main .popup-area {
-  background-color: #ff2a70;
-  width: 100%;
-  padding: 25px;
-  position: relative;
-  box-sizing: border-box;
-  display: flex; }
-  main .popup-area .popup-segment {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 30px; }
-    main .popup-area .popup-segment img {
-      flex-shrink: 0;
-      margin-right: 20px;
-      transform: translateY(5px); }
-  main .popup-area > * {
-    width: 100%;
-    padding-right: 20px; }
-  main .popup-area::after {
-    content: "";
-    width: 25px;
-    height: 25px;
-    background-color: #ff2a70;
-    transform: translateX(-50%) translateY(50%) rotate(45deg);
-    position: absolute;
-    bottom: 0;
-    left: 50%; }
-
-main input[type="text"], main textarea {
+main input[type="text"], main input[type="date"], main textarea {
   width: 100%;
   margin-bottom: 30px; }
 

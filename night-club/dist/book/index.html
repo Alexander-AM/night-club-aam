@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/png">
     <title>Night Club</title>
-    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="/assets/css/book.css">
     </head>
     <body>
         <div id="loader">
@@ -13,17 +13,6 @@
 </div>
 
 <script src="/assets/js/loader.js"></script>
-        <section class="hero">
-    <img src="">
-
-    <section class="logo-wrapper">
-        <img class="logo" src="/assets/img/logo.svg">
-        <p class="good-time">Have a good time</p>
-        <img class="bottom-bar" src="/assets/img/bottom_line.png">
-    </section>
-</section>
-
-<script src="/assets/js/hero.js"></script>
         <nav>
     <div class="constrictor">
         <img src="/assets/img/logo_w_tagline.svg">
@@ -42,82 +31,39 @@
 <script src="/assets/js/nav.js"></script>
 
         <main>
-            <section class="section-1">
-                <h1 class="section-header">Welcome in night<span class="theme-coloured">club</span></h1>
-
-                <div class="constrictor images">
-                    <div class="image-container">
-                        <img src="/assets/img/content/thumb1.jpg">
-                        <div class="image-cover">
-                            <i class="fas fa-male"></i>
-                            <h3>Night Club</h3>
-                            <p>
-                                Lorem ipsum...
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="image-container">
-                        <img src="/assets/img/content/reastaurant_1.jpg">
-                        <div class="image-cover">
-                            <i class="fas fa-utensils"></i>
-                            <h3>Restaurant</h3>
-                            <p>
-                                Lorem ipsum...
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="image-container">
-                        <img src="/assets/img/content/thumb2.jpg">
-                        <div class="image-cover">
-                            <i class="fas fa-glass-cheers"></i>
-                            <h3>Bar</h3>
-                            <p>
-                                Lorem ipsum...
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <section class="title-area">
+                <h1 class="section-header wide">Book Table</h1>
             </section>
 
-            <section class="section-2">
-                <div class="lifted">
-                    <h1 class="section-header">Events of the month</h1>
+            <div class="constrictor">
+                <section class="table-picker">
+                    
+                </section>
+                <section>
+                    <h2 class="book-title">Book A Table</h2>
 
-                    <div class="constrictor">
-                        <div class="events-slider-wrapper">
-                            <div class="events-slider">
-                                <!-- Events slider items go here -->
-                            </div>
-        
-                            <div class="events-slider-controls">
-                                <!-- Events slider controls go here -->
-                            </div>
+                    <form id="book-form">
+                        <section class="side-by-side">
+                            <section class="left-side">
+                                <input type="text" name="name" id="book-name" placeholder="Your Name">
+                                <input type="text" name="table" id="book-table" placeholder="Table Number">
+                                <input type="text" name="date" id="book-date" placeholder="Select Date">
+                            </section>
+                            <section class="right-side">
+                                <input type="text" name="email" id="book-email" placeholder="Your Email">
+                                <input type="text" name="guests" id="book-guests" placeholder="Number of Guests">
+                                <input type="text" name="number" id="book-number" placeholder="Your Contact Number">
+                            </section>
+                        </section>
+
+                        <textarea name="comment" id="book-comment" cols="30" rows="10"></textarea>
+
+                        <div class="button-wrapper">
+                            <button id="book-reserve">Reserve</button>
                         </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section-3">
-                <h1 class="section-header">Night club gallery</h1>
-            </section>
-
-            <section class="section-6">
-                
-            </section>
-
-            <section class="section-8">
-                <div class="constrictor">
-                    <h3>Want the latest club news</h3>
-                    <p>Subscribe to our newsletter and never miss a <a href="/">Event</a></p>
-
-                    <form id="newsletter-form">
-                        <input type="text" name="email" id="newsletter-input-email" placeholder="Enter Your Email">
-                        <button id="newsletter-input-subscribe">Subscribe</button>
                     </form>
-                </div>
-            </section>
+                </section>
+            </div>
         </main>
 
         <footer>
@@ -215,7 +161,7 @@
         </div>
     </section>
 </footer>
-
-        <script src="/assets/js/index.js"></script>
+        
+        <script src="/assets/js/book.js"></script>
     </body>
 </html>
