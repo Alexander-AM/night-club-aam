@@ -146,6 +146,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <div class="testimonies-social-media">
                         <a href="${e[i].facebook}"><i class="fab fa-facebook-f"></i></a>
                         <a href="${e[i].twitter}"><i class="fab fa-twitter"></i></a>
+                        <a href="${e[i].google ? e[i].google : "https://google.com"}"><i class="fab fa-google"></i></a>
                     </div>
                 </article>
             </div>
