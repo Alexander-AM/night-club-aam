@@ -130,6 +130,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     //-- Section 3, gallery --//
     const galleryContainerDOM = document.querySelector(".gallery-container");
     const lightboxDOM = document.querySelector(".lightbox");
+    const lightboxImageDOM = document.querySelector(".lightbox-image");
+    const lightboxTitleDOM = document.querySelector(".lightbox-title");
+    const lightboxTextDOM = document.querySelector(".lightbox-text");
 
     window.addEventListener("scroll", () => {
         if(!galleryContainerDOM.classList.contains("animate") && galleryContainerDOM.getBoundingClientRect().top - document.documentElement.clientHeight <= 0) {
@@ -140,12 +143,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     galleryContainerDOM.addEventListener("click", (e) => {
         if(e.target.classList.contains("gallery-item-cover")) {
             lightboxDOM.classList.add("visible");
+            lightboxImageDOM.setAttribute("src", e.target.parentNode.children[0].getAttribute("src"));
         }
     });
 
     lightboxDOM.addEventListener("click", (e) => {
         if(e.target.classList.contains("lightbox")) {
             lightboxDOM.classList.remove("visible");
+        } else if(e.target.classList.contains("lightbox-left")) {
+            
+        } else if(e.target.classList.contains("lightbox-right")) {
+
         }
     });
 

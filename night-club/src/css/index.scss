@@ -467,14 +467,21 @@ main {
             }
 
             .lightbox-post {
-                height: 100%;
-                width: 60%;
                 position: absolute;
-                top: 0;
                 left: 50%;
-                transform: translateX(-50%);
                 display: flex;
                 flex-direction: column;
+                width: 90%;
+                height: 90%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+
+                @media screen and (min-width: 900px) {
+                    width: 60%;
+                    height: 100%;
+                    top: 0;
+                    transform: translateX(-50%);
+                }
 
                 .lightbox-title {
                     margin-bottom: 15px;
@@ -532,7 +539,7 @@ main {
 
             .lightbox-left, .lightbox-right {
                 position: absolute;
-                top: 50%;
+                top: calc(65% / 2);
                 transform: translateY(-50%);
                 width: 25px;
                 height: 25px;
@@ -540,6 +547,11 @@ main {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                z-index: 50;
+
+                @media screen and (min-width: 900px) {
+                    top: 50%;
+                }
 
                 &:hover {
                     cursor: pointer;
@@ -553,12 +565,15 @@ main {
                     border-right-color: transparent;
                     border-bottom-color: transparent;
                     position: absolute;
-
                 }
             }
 
             .lightbox-left {
-                left: 120px;
+                left: 20px;
+
+                @media screen and (min-width: 900px) {
+                    left: 120px;
+                }
 
                 &::before {
                     transform: translateX(25%) rotate(-45deg);
@@ -566,7 +581,11 @@ main {
             }
 
             .lightbox-right {
-                right: 120px;
+                right: 20px;
+
+                @media screen and (min-width: 900px) {
+                    right: 120px;
+                }
 
                 &::before {
                     transform: translateX(-25%) rotate(135deg);
