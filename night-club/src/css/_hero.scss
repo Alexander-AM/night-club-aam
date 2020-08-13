@@ -1,14 +1,26 @@
 .hero {
-    height: 740px;
+    min-height: 100vh;
     width: 100%;
     overflow: hidden;
     position: relative;
+
+    @media screen and (min-width: 640px) {
+        min-height: auto;
+        height: 740px;
+    }
 
     & > img {
         width: 100%;
         vertical-align: bottom;
         position: absolute;
         z-index: 5;
+        height: 100%;
+        object-fit: cover;
+
+        @media screen and (min-width: 640px) {
+            height: auto;
+            object-fit: none;
+        }
     }
 
     .logo-wrapper {
@@ -28,10 +40,20 @@
 
         .logo {
             margin-bottom: 10px;
+            width: 75%;
+
+            @media screen and (min-width: 640px) {
+                width: auto;
+            }
         }
 
         .bottom-bar {
             height: 5em;
+            width: 70%;
+
+            @media screen and (min-width: 640px) {
+                width: auto;
+            }
         }
 
         .good-time, .bottom-bar {
@@ -54,8 +76,13 @@
         font-weight: 100;
         text-transform: uppercase;
         color: #fff;
-        font-size: 21px;
-        letter-spacing: 22px;
+        letter-spacing: 5px;
+        font-size: 14px;
+
+        @media screen and (min-width: 640px) {
+            letter-spacing: 22px;
+            font-size: 21px;
+        }
     }
 }
 

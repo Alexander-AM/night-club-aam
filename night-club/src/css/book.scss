@@ -6,7 +6,12 @@
 
 main {
     .constrictor {
-        padding: 60px 40px 80px 40px;
+        padding: 60px 20px 80px 20px;
+        box-sizing: border-box;
+
+        @media screen and (min-width: 640px) {
+            padding: 60px 40px 80px 40px;
+        }
     }
     
     .book-title {
@@ -16,9 +21,16 @@ main {
 
     .table-picker {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: 1fr;
         grid-gap: 75px 0;
         margin-bottom: 75px;
+        padding: 0 40px;
+        box-sizing: border-box;
+
+        @media screen and (min-width: 640px) {
+            grid-template-columns: repeat(5, 1fr);
+            padding: 0;
+        }
 
         .table-wrapper {
             width: 100%;
@@ -63,8 +75,13 @@ main {
     }
 
     .side-by-side {
-        display: flex;
-        padding-top: 40px;
+        &:first-child {
+            padding-top: 40px;
+        }
+
+        @media screen and (min-width: 640px) {
+            display: flex;
+        }
     
         & > * {
             box-sizing: border-box;
@@ -72,11 +89,15 @@ main {
         }
 
         .left-side {
-            padding-right: 15px;
+            @media screen and (min-width: 640px) {
+                padding-right: 15px;
+            } 
         }
 
         .right-side {
-            padding-left: 15px;
+            @media screen and (min-width: 640px) {
+                padding-left: 15px;
+            }
         }
     }
 

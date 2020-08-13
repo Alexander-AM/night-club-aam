@@ -42,9 +42,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     const eventsSliderLoopFunc = () => {
         eventsSliderActiveDOM.classList.remove("active");
 
+        const controlChildren = (document.documentElement.clientWidth >= 640) ? eventsSliderControlsDOM.querySelectorAll(".slider-button:not(.max-hide)") : eventsSliderControlsDOM.children;
+
         eventsSliderSlide++;
-        if(eventsSliderSlide >= eventsSliderControlsDOM.children.length) eventsSliderSlide = 0;
-        eventsSliderActiveDOM = eventsSliderControlsDOM.children[eventsSliderSlide];
+        if(eventsSliderSlide >= controlChildren.length) eventsSliderSlide = 0;
+        eventsSliderActiveDOM = controlChildren[eventsSliderSlide];
 
         eventsSliderActiveDOM.classList.add("active");
         eventsSliderDOM.style.transform = `translateX(-${eventsSliderSlide * 100}%)`;
@@ -64,7 +66,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             <div class="events-slider-item">
                 <article class="event-post">
                     <section class="event-post-upper">
-                        <img src="/assets/img/content/reastaurant_1.jpg">
+                        <img src="http://localhost:4000/file-bucket/event-thumb${i + 1}.jpg">
                         <div class="event-post-cover">
                             <a href="/book" class="event-post-book">Book Now</a>
                         </div>
@@ -85,9 +87,19 @@ document.addEventListener("DOMContentLoaded", async () => {
             eventsSliderDOM.innerHTML += eventsSliderItemTemplate;
 
 
-            if(i % 2 == 0) {
-                eventsSliderControlsDOM.innerHTML += `<div class="slider-button events-slider-button ${i / 2 == 0 ? "active" : ""}" data-val="${i / 2}"></div>`;
-            }
+            eventsSliderControlsDOM.innerHTML += `<div class="slider-button events-slider-button ${i == 0 ? "active" : ""} ${ i >= e.length / 2 ? "max-hide" : ""}" data-val="${i}"></div>`;
+        }
+    });
+
+    window.addEventListener("resize", (e) => {
+        if(document.documentElement.clientWidth >= 640) {
+            eventsSliderActiveDOM.classList.remove("active");
+
+            eventsSliderSlide = 0;
+            eventsSliderActiveDOM = eventsSliderControlsDOM.children[0];
+            eventsSliderActiveDOM.classList.add("active");
+
+            eventsSliderDOM.style.transform = `translateX(0)`;
         }
     });
 
@@ -115,22 +127,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     let eventsSliderLoop = setInterval(eventsSliderLoopFunc, 1000 * 5);
 
 
+    //-- Section 3, gallery --//
+    // TODO: https://css-tricks.com/seamless-responsive-photo-grid/
+    // Alternative: https://masonry.desandro.com/
+
     //-- Section 6, slider --//
     let testimoniesSliderSlide = 0;
     
     const testimoniesSliderDOM = document.querySelector(".testimonies-slider");
     const testimoniesSliderControlsDOM = document.querySelector(".testimonies-slider-controls");
-
-    const testimoniesSliderLoopFunc = () => {
-        testimoniesSliderActiveDOM.classList.remove("active");
-
-        testimoniesSliderSlide++;
-        if(testimoniesSliderSlide >= testimoniesSliderControlsDOM.children.length) testimoniesSliderSlide = 0;
-        testimoniesSliderActiveDOM = testimoniesSliderControlsDOM.children[testimoniesSliderSlide];
-
-        testimoniesSliderActiveDOM.classList.add("active");
-        testimoniesSliderDOM.style.transform = `translateX(-${testimoniesSliderSlide * 100}%)`;
-    };
 
     await fetch("http://localhost:4000/testemonials")
     .then((e) => e.json())
@@ -152,8 +157,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             </div>
             `;
 
-            console.log(e[i]);
-
             testimoniesSliderDOM.innerHTML += testimoniesSliderItemTemplate;
 
 
@@ -165,8 +168,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     testimoniesSliderControlsDOM.addEventListener("click", (e) => {
         if(e.target.classList.contains("testimonies-slider-button")) {
-            clearInterval(testimoniesSliderLoop);
-
             testimoniesSliderActiveDOM.classList.remove("active");
 
             testimoniesSliderActiveDOM = e.target;
@@ -177,8 +178,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             testimoniesSliderDOM.style.transform = `translateX(-${testimoniesSliderSlide * 100}%)`;
         }
     });
-
-    let testimoniesSliderLoop = setInterval(testimoniesSliderLoopFunc, 1000 * 5);
 
 
     //-- Finished loading --//

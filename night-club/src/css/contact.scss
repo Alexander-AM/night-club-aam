@@ -5,7 +5,8 @@
 
 main {
     .constrictor {
-        padding: 40px;
+        box-sizing: border-box;
+        padding: 40px 20px;
     }
 
     .title-area {
@@ -29,8 +30,11 @@ main {
     }
 
     .side-by-side {
-        display: flex;
         padding-top: 40px;
+
+        @media screen and (min-width: 640px) {
+            display: flex;
+        }
     
         & > * {
             box-sizing: border-box;
@@ -38,11 +42,20 @@ main {
         }
 
         .left-side {
-            padding-right: 15px;
+            margin-bottom: 40px;
+
+            @media screen and (min-width: 640px) {
+                padding-right: 15px;
+                margin-bottom: 0;
+            }
         }
 
         .right-side {
-            padding-left: 15px;
+            min-height: 100vh;
+
+            @media screen and (min-width: 640px) {
+                padding-left: 15px;
+            }
         }
     }
 
@@ -52,12 +65,21 @@ main {
         padding: 25px;
         position: relative;
         box-sizing: border-box;
-        display: flex;
+
+        @media screen and (min-width: 640px) {
+            display: flex;
+        }
 
         .popup-segment {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #fff;
+
+            @media screen and (min-width: 640px) {
+                border-bottom: 0;
+            }
 
             img {
                 flex-shrink: 0;
