@@ -9,7 +9,7 @@ main {
         padding: 60px 20px 80px 20px;
         box-sizing: border-box;
 
-        @media screen and (min-width: 640px) {
+        @media screen and (min-width: 940px) {
             padding: 60px 40px 80px 40px;
         }
     }
@@ -27,7 +27,7 @@ main {
         padding: 0 40px;
         box-sizing: border-box;
 
-        @media screen and (min-width: 640px) {
+        @media screen and (min-width: 940px) {
             grid-template-columns: repeat(5, 1fr);
             padding: 0;
         }
@@ -79,7 +79,7 @@ main {
             padding-top: 40px;
         }
 
-        @media screen and (min-width: 640px) {
+        @media screen and (min-width: 940px) {
             display: flex;
         }
     
@@ -89,13 +89,13 @@ main {
         }
 
         .left-side {
-            @media screen and (min-width: 640px) {
+            @media screen and (min-width: 940px) {
                 padding-right: 15px;
             } 
         }
 
         .right-side {
-            @media screen and (min-width: 640px) {
+            @media screen and (min-width: 940px) {
                 padding-left: 15px;
             }
         }

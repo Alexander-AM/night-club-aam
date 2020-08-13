@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const eventsSliderLoopFunc = () => {
         eventsSliderActiveDOM.classList.remove("active");
 
-        const controlChildren = (document.documentElement.clientWidth >= 640) ? eventsSliderControlsDOM.querySelectorAll(".slider-button:not(.max-hide)") : eventsSliderControlsDOM.children;
+        const controlChildren = (document.documentElement.clientWidth >= 700) ? eventsSliderControlsDOM.querySelectorAll(".slider-button:not(.max-hide)") : eventsSliderControlsDOM.children;
 
         eventsSliderSlide++;
         if(eventsSliderSlide >= controlChildren.length) eventsSliderSlide = 0;

@@ -32,7 +32,7 @@ main {
     .side-by-side {
         padding-top: 40px;
 
-        @media screen and (min-width: 640px) {
+        @media screen and (min-width: 940px) {
             display: flex;
         }
     
@@ -44,7 +44,7 @@ main {
         .left-side {
             margin-bottom: 40px;
 
-            @media screen and (min-width: 640px) {
+            @media screen and (min-width: 940px) {
                 padding-right: 15px;
                 margin-bottom: 0;
             }
@@ -53,7 +53,7 @@ main {
         .right-side {
             min-height: 100vh;
 
-            @media screen and (min-width: 640px) {
+            @media screen and (min-width: 940px) {
                 padding-left: 15px;
             }
         }
@@ -66,7 +66,7 @@ main {
         position: relative;
         box-sizing: border-box;
 
-        @media screen and (min-width: 640px) {
+        @media screen and (min-width: 940px) {
             display: flex;
         }
 
@@ -77,7 +77,7 @@ main {
             padding-bottom: 15px;
             border-bottom: 1px solid #fff;
 
-            @media screen and (min-width: 640px) {
+            @media screen and (min-width: 940px) {
                 border-bottom: 0;
             }
 
