@@ -128,8 +128,27 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
     //-- Section 3, gallery --//
-    // TODO: https://css-tricks.com/seamless-responsive-photo-grid/
-    // Alternative: https://masonry.desandro.com/
+    const galleryContainerDOM = document.querySelector(".gallery-container");
+    const lightboxDOM = document.querySelector(".lightbox");
+
+    window.addEventListener("scroll", () => {
+        if(!galleryContainerDOM.classList.contains("animate") && galleryContainerDOM.getBoundingClientRect().top - document.documentElement.clientHeight <= 0) {
+            galleryContainerDOM.classList.add("animate");
+        }
+    });
+
+    galleryContainerDOM.addEventListener("click", (e) => {
+        if(e.target.classList.contains("gallery-item-cover")) {
+            lightboxDOM.classList.add("visible");
+        }
+    });
+
+    lightboxDOM.addEventListener("click", (e) => {
+        if(e.target.classList.contains("lightbox")) {
+            lightboxDOM.classList.remove("visible");
+        }
+    });
+
 
     //-- Section 6, slider --//
     let testimoniesSliderSlide = 0;
