@@ -34,8 +34,26 @@ Denne kode er brugt til alle formularerne. Den laver et URLSearchParams objekt. 
 ---
 
 ```javascript
+var finishedLoading = false;
+const loaderDOM = document.querySelector("#loader");
+const FPS = 1000 / 100;
 
+const loop = () => {
+    if(finishedLoading && !loaderDOM.classList.contains("remove")) {
+        loaderDOM.classList.add("remove");
+        setTimeout(() => {
+            loaderDOM.remove();
+        }, 2500);
+    }
+
+    if(!finishedLoading && !loaderDOM.classList.contains("remove")) {
+        setTimeout(loop, FPS);
+    }
+};
+
+setTimeout(loop, FPS);
 ```
+Dette er et simpelt loop der tjekker om variablet `finishedLoading` er `true` (sandt). Hvis det er det, så skal loaderen spille en animation og slettes efter 2.5 sekunder. Variablet `finishedLoading` er uden scope, og sættes til `true` nederst i de side-specifikke JavaScript filer (ie. book.js, contact.js, og index.js), hvilket gør at venteskærmen først forsvinder når alt JavaScript har kørt.
 
 
 ## "Soft" dokumentation
