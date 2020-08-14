@@ -66,3 +66,5 @@ Jeg udviklede først desktop versionen af hjemmeside i dele. Jeg brugte sektione
 Når jeg faldt over elementer der kunne gøres modulere (eller hvis deres CSS kunne være globalt), gik jeg tilbage i koden og lavede de ændringer det ville kræve. Efter at have færdiggjort 9/10 af hjemmesiden, omskrev jeg hurtigt noget af koden sådan så at den var mere responsiv.
 
 Jeg nedskrev ikke nogen planlagt struktur før jeg begyndte opgaven, da jeg sjældent ender med at bruge dem alligevel. Jeg planlage intet i forvejen, og fokuserede i stedet på at maksimere hastigheden for at blive færdi med opgaven til tiden.
+
+Det største problem jeg blev mødt med under udviklingen var layoutet til galleriet. Jeg ville godt have at den automatisk skulle lave et grid med de forskellige størrelser af billeder, men jeg kunne ikke finde nogen biblioteker der gjorde det, så jeg endte med en mindre nøjagtig løsning. Andet end det har der ikke været nogle store problemer.
