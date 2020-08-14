@@ -134,12 +134,31 @@ document.addEventListener("DOMContentLoaded", async () => {
     const lightboxTitleDOM = document.querySelector(".lightbox-title");
     const lightboxTextDOM = document.querySelector(".lightbox-text");
 
+
+    // Load gallery
+    const ASSETS = await fetch("http://localhost:4000/assets/").then((e) => e.json());
+
+    await fetch("http://localhost:4000/gallery-photos")
+    .then((e) => e.json())
+    .then(async (e) => {
+        for(let i = 0; i < e.length; i++) {
+            galleryContainerDOM.innerHTML += `
+            <div class="gallery-item">
+                <img src="${ASSETS[e[i].asset - 1].url}">
+                <div class="gallery-item-cover"></div>
+            </div>
+            `;
+        }
+    });
+
+    // Animate
     window.addEventListener("scroll", () => {
         if(!galleryContainerDOM.classList.contains("animate") && galleryContainerDOM.getBoundingClientRect().top - document.documentElement.clientHeight <= 0) {
             galleryContainerDOM.classList.add("animate");
         }
     });
 
+    // Lightbox
     galleryContainerDOM.addEventListener("click", (e) => {
         if(e.target.classList.contains("gallery-item-cover")) {
             lightboxDOM.classList.add("visible");
