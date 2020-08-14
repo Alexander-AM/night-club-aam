@@ -20,6 +20,7 @@ Absolut minimum for en rigtig email er `a@a.aa`
 
 Det er nok en af de mere komplicerede ting i min kode.
 
+---
 
 ```javascript
 const data = new URLSearchParams();
@@ -29,6 +30,12 @@ for (const pair of new FormData(newsletterFormDOM)) {
 }
 ```
 Denne kode er brugt til alle formularerne. Den laver et URLSearchParams objekt. Derefter looper den igennem alle form elementerne fra FormData objektet og tilføjer nøgle/værdi parrene til URLSearchParams objektet. Dette er for at lave et element der kan sendes via POST til API-en.
+
+---
+
+```javascript
+
+```
 
 
 ## "Soft" dokumentation
