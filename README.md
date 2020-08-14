@@ -1,13 +1,12 @@
 # Documentation
 
 ## Teknologier
-Til dette projekt har jeg valgt at bruge EJS, Gulp og Sass.
+Til dette projekt har jeg valgt at bruge EJS, Gulp og Sass, såvel som vanilla JavaScript.
 Jeg valgte at bruge EJS på grund af de modulære systemer. Det samme gælder for Sass.
 Jeg valgte Gulp fordi jeg havde brugt den før i sammenhæng med EJS og Sass. Det hjalp også med at flytte færdige filer.
-Jeg brugte standard JavaScript til dette.
+Vanilla JavaScript var valgt på grund af hastighed.
 
-Alle teknologier var valgt fordi jeg syntes at de var hurtigst at starte på og arbejde med uden at skulle tænke for meget over det. Det var på grund af den 1-uges deadline vi havde. Jeg overvejede hurtigt React, Gatsby og nogle andre, men kom til konklusionen at de ville komme med for mange udfordringer, for en opgave der skulle laves så hurtitg.
-
+Alle teknologier var valgt fordi jeg syntes at de var hurtigst at starte på og arbejde med uden at skulle tænke for meget over det. Det var på grund af den 1-uges deadline vi havde. Jeg overvejede hurtigt React, Gatsby og nogle andre, men kom til konklusionen at de ville komme med for mange udfordringer, for en opgave der skulle laves så hurtigt.
 
 ## Teknisk dokumentation
 ```javascript
@@ -20,6 +19,16 @@ Skrevet mere forståeligt, `not_white.space @ notWhitespaceOrPeriod . minTwoLett
 Absolut minimum for en rigtig email er `a@a.aa`
 
 Det er nok en af de mere komplicerede ting i min kode.
+
+
+```javascript
+const data = new URLSearchParams();
+
+for (const pair of new FormData(newsletterFormDOM)) {
+    data.append(pair[0], pair[1]);
+}
+```
+Denne kode er brugt til alle formularerne. Den laver en URLSearchParams objekt. Derefter looper den igennem alle form elementerne fra FormData objektet og tilføjer nøgle/værdi parrene til URLSearchParams objektet. Dette er for at lave et element der kan sendes via POST til API-en.
 
 
 ## "Soft" dokumentation
@@ -47,6 +56,6 @@ Sektion #8 har et inputfelt til en email, såvel som en knap. Når der trykkes p
 
 ## Arbejdsprocess
 Jeg udviklede først desktop versionen af hjemmesiden i sektionerne defineret i opgavebeskrivelsen.
-Når jeg faldt på elementer der kunne gøres modulere (eller hvis stile kunne være globale), gik jeg tilbage i koden og lavede de ændringer under udviklingen af den sektion jeg arbejdede med på det tidspunkt. Efter at have færdiggjort 9/10 af hjemmesiden, omskrev jeg hurtigt noget af koden sådan så at den kunne følge mobil-layoutet.
+Når jeg faldt på elementer der kunne gøres modulere (eller hvis deres CS kunne være globalt), gik jeg tilbage i koden og lavede de ændringer det ville kræve. Efter at have færdiggjort 9/10 af hjemmesiden, omskrev jeg hurtigt noget af koden sådan så at den kunne følge det mobile layout vi fik.
 
 Jeg nedskrev ikke nogen planlagt struktur før jeg begyndte opgaven, da jeg sjældent ender med at bruge dem alligevel.
