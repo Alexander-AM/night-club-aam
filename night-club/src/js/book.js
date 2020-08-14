@@ -44,14 +44,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const tableExists = (bookTableDOM.value != "");
 
         let dateValid = true;
-        let date;
-
-        if(dateExists) {
+        
+        if(dateExists && tableExists) {
             const reservations = await fetch("http://localhost:4000/reservations").then(e => e.json());
-            date = new Date(bookDateDOM.value).toISOString();
+            let table = parseInt(bookTableDOM.value);
+            let date = new Date(bookDateDOM.value).toISOString();
 
             for(let i = 0; i < reservations.length; i++) {
-                if(date == reservations[i].date) {
+                if(table == reservations[i].table && date == reservations[i].date) {
                     dateValid = false;
                     break;
                 }

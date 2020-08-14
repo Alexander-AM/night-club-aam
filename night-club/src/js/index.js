@@ -235,7 +235,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             clearTimeout(lightboxSlideAnimationA);
             clearTimeout(lightboxSlideAnimationB);
             lightboxPostDOM.classList.remove("in-right", "in-left", "animate", "left", "right");
-
             lightboxPostDOM.classList.add("animate", "right");
             
             currentLightboxSlide++;
