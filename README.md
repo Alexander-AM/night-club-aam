@@ -28,7 +28,7 @@ for (const pair of new FormData(newsletterFormDOM)) {
     data.append(pair[0], pair[1]);
 }
 ```
-Denne kode er brugt til alle formularerne. Den laver en URLSearchParams objekt. Derefter looper den igennem alle form elementerne fra FormData objektet og tilføjer nøgle/værdi parrene til URLSearchParams objektet. Dette er for at lave et element der kan sendes via POST til API-en.
+Denne kode er brugt til alle formularerne. Den laver et URLSearchParams objekt. Derefter looper den igennem alle form elementerne fra FormData objektet og tilføjer nøgle/værdi parrene til URLSearchParams objektet. Dette er for at lave et element der kan sendes via POST til API-en.
 
 
 ## "Soft" dokumentation
@@ -55,7 +55,7 @@ Sektion #8 har et inputfelt til en email, såvel som en knap. Når der trykkes p
 
 
 ## Arbejdsprocess
-Jeg udviklede først desktop versionen af hjemmesiden i sektionerne defineret i opgavebeskrivelsen.
-Når jeg faldt på elementer der kunne gøres modulere (eller hvis deres CS kunne være globalt), gik jeg tilbage i koden og lavede de ændringer det ville kræve. Efter at have færdiggjort 9/10 af hjemmesiden, omskrev jeg hurtigt noget af koden sådan så at den kunne følge det mobile layout vi fik.
+Jeg udviklede først desktop versionen af hjemmeside i dele. Jeg brugte sektionerne defineret i opgavebeskrivelsen som guidelines.
+Når jeg faldt over elementer der kunne gøres modulere (eller hvis deres CSS kunne være globalt), gik jeg tilbage i koden og lavede de ændringer det ville kræve. Efter at have færdiggjort 9/10 af hjemmesiden, omskrev jeg hurtigt noget af koden sådan så at den var mere responsiv.
 
-Jeg nedskrev ikke nogen planlagt struktur før jeg begyndte opgaven, da jeg sjældent ender med at bruge dem alligevel.
+Jeg nedskrev ikke nogen planlagt struktur før jeg begyndte opgaven, da jeg sjældent ender med at bruge dem alligevel. Jeg planlage intet i forvejen, og fokuserede i stedet på at maksimere hastigheden for at blive færdi med opgaven til tiden.
