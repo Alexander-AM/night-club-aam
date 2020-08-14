@@ -18,7 +18,8 @@ main {
             }
 
             .image-container:nth-child(2) {
-                margin: 20px 0;
+                margin-top: 20px;
+                margin-bottom: 20px;
 
                 @media screen and (min-width: 940px) {
                     margin: 0 20px;
@@ -28,6 +29,15 @@ main {
             .image-container {     
                 position: relative;
                 overflow: hidden;
+
+                @media screen and (min-width: 700px) {
+                    width: fit-content;
+                    margin: 0 auto;
+                }
+
+                @media screen and (min-width: 940px) {
+                    width: 100%;
+                }
                 
                 img {
                     vertical-align: bottom;
