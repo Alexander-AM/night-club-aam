@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const ASSETS = await fetch("http://localhost:4000/assets/").then((e) => e.json());
 
-    const GALLERY_PHOTOS = await fetch("http://localhost:4000/gallery-photos")
+    await fetch("http://localhost:4000/gallery-photos")
     .then((e) => e.json())
     .then(async (e) => {
         for(let i = 0; i < e.length; i++) {
@@ -157,6 +157,32 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         return e;
     });
+
+
+    const galleryItemsDOM = galleryContainerDOM.querySelectorAll(".gallery-item");
+    const galleryItemsImgDOM = galleryContainerDOM.querySelectorAll(".gallery-item img");
+
+    const resizeImageGallery = () => {
+        const result = partition_layout(galleryItemsImgDOM, {
+            containerWidth: document.documentElement.clientWidth,
+            idealElementHeight: 200,
+            spacing: 0,
+        });
+        
+        if(isNaN(result.height)) {
+            setTimeout(resizeImageGallery, 100);
+        } else {
+            galleryContainerDOM.style.height = result.height + "px";
+        
+            for(let i = 0; i < galleryItemsDOM.length; i++) {
+                galleryItemsDOM[i].style.left = result.positions[i].x + "px";
+                galleryItemsDOM[i].style.top = result.positions[i].y + "px";
+                galleryItemsDOM[i].style.width = result.positions[i].width + "px";
+                galleryItemsDOM[i].style.height = result.positions[i].height + "px";
+            }
+        }
+    }
+    resizeImageGallery();
 
     // Animate
     window.addEventListener("scroll", () => {

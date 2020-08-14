@@ -8,6 +8,8 @@ Vanilla JavaScript var valgt på grund af hastighed.
 
 Alle teknologier var valgt fordi jeg syntes at de var hurtigst at starte på og arbejde med uden at skulle tænke for meget over det. Det var på grund af den 1-uges deadline vi havde. Jeg overvejede hurtigt React, Gatsby og nogle andre, men kom til konklusionen at de ville komme med for mange udfordringer, for en opgave der skulle laves så hurtigt.
 
+Jeg tog også brug af github.com/naturalatlas/image-layout, som jeg modificerede til sektion #3 (galleriet).
+
 ## Teknisk dokumentation
 ```javascript
 const emailRegex = /(?:[^\s]+)@(?:[^\s\.]+)\.[A-z](?:[A-z]+)/;
@@ -85,4 +87,4 @@ Når jeg faldt over elementer der kunne gøres modulere (eller hvis deres CSS ku
 
 Jeg nedskrev ikke nogen planlagt struktur før jeg begyndte opgaven, da jeg sjældent ender med at bruge dem alligevel. Jeg planlage intet i forvejen, og fokuserede i stedet på at maksimere hastigheden for at blive færdi med opgaven til tiden.
 
-Det største problem jeg blev mødt med under udviklingen var layoutet til galleriet. Jeg ville godt have at den automatisk skulle lave et grid med de forskellige størrelser af billeder, men jeg kunne ikke finde nogen biblioteker der gjorde det, så jeg endte med en mindre nøjagtig løsning. Andet end det har der ikke været nogle store problemer.
+Det største problem jeg blev mødt med under udviklingen var layoutet til galleriet. Jeg ville godt have at den automatisk skulle lave et grid med de forskellige størrelser af billeder, men jeg kunne ikke finde nogen biblioteker der gjorde det jeg ville, så jeg endte med en mindre nøjagtig løsning. Tæt på slutningen af den sidste dag lykkedes det mig at modificere noget kode til at gøre det jeg ville. Andet end det har der ikke været nogle store problemer.

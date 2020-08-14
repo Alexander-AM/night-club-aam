@@ -11,7 +11,7 @@ sass.compiler = require("node-sass");
 
 
 
-const dirsToCopy = [ "src/fontawesome/**/*" ];
+const dirsToCopy = [ "src/fontawesome/**/*", "src/image-layout/**/*" ];
 
 
 function copyDirs(next) {
