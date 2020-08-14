@@ -479,6 +479,44 @@ main {
                 height: 90%;
                 top: 50%;
                 transform: translate(-50%, -50%);
+                opacity: 1;
+                transition: opacity 0.25s ease, left 0.25s ease;
+
+                &.in-right {
+                    animation: in-right 0.25s ease forwards;
+                }
+
+                &.in-left {
+                    animation: in-left 0.25s ease forwards;
+                }
+
+                @keyframes in-left {
+                    from {
+                        left: 75%;
+                    } to {
+                        left: 50%;
+                    }
+                }
+                
+                @keyframes in-right {
+                    from {
+                        left: 25%;
+                    } to {
+                        left: 50%;
+                    }
+                }
+
+                &.animate {
+                    opacity: 0;
+
+                    &.left {
+                        left: 75%;
+                    }
+
+                    &.right {
+                        left: 25%;
+                    }
+                }
 
                 @media screen and (min-width: 900px) {
                     width: 60%;
@@ -552,6 +590,7 @@ main {
                 justify-content: center;
                 align-items: center;
                 z-index: 50;
+                user-select: none;
 
                 @media screen and (min-width: 900px) {
                     top: 50%;

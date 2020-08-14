@@ -133,22 +133,29 @@ document.addEventListener("DOMContentLoaded", async () => {
     const lightboxImageDOM = document.querySelector(".lightbox-image");
     const lightboxTitleDOM = document.querySelector(".lightbox-title");
     const lightboxTextDOM = document.querySelector(".lightbox-text");
+    const lightboxPostDOM = document.querySelector(".lightbox-post");
 
 
     // Load gallery
+    let lightboxPosts = [];
+
     const ASSETS = await fetch("http://localhost:4000/assets/").then((e) => e.json());
 
-    await fetch("http://localhost:4000/gallery-photos")
+    const GALLERY_PHOTOS = await fetch("http://localhost:4000/gallery-photos")
     .then((e) => e.json())
     .then(async (e) => {
         for(let i = 0; i < e.length; i++) {
             galleryContainerDOM.innerHTML += `
-            <div class="gallery-item">
+            <div class="gallery-item" data-item="${i}">
                 <img src="${ASSETS[e[i].asset - 1].url}">
                 <div class="gallery-item-cover"></div>
             </div>
             `;
+
+            lightboxPosts.push({ url: ASSETS[e[i].asset - 1].url });
         }
+
+        return e;
     });
 
     // Animate
@@ -159,20 +166,62 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     // Lightbox
+    let currentLightboxSlide = 0;
+
     galleryContainerDOM.addEventListener("click", (e) => {
         if(e.target.classList.contains("gallery-item-cover")) {
             lightboxDOM.classList.add("visible");
             lightboxImageDOM.setAttribute("src", e.target.parentNode.children[0].getAttribute("src"));
+            currentLightboxSlide = parseInt(e.target.parentNode.dataset.item);
         }
     });
+
+    let lightboxSlideAnimationA, lightboxSlideAnimationB;
 
     lightboxDOM.addEventListener("click", (e) => {
         if(e.target.classList.contains("lightbox")) {
             lightboxDOM.classList.remove("visible");
         } else if(e.target.classList.contains("lightbox-left")) {
-            
-        } else if(e.target.classList.contains("lightbox-right")) {
+            clearTimeout(lightboxSlideAnimationA);
+            clearTimeout(lightboxSlideAnimationB);
+            lightboxPostDOM.classList.remove("in-right", "in-left", "animate", "left", "right");
+            lightboxPostDOM.classList.add("animate", "left");
 
+            currentLightboxSlide--;
+            if(currentLightboxSlide < 0) {
+                currentLightboxSlide = lightboxPosts.length - 1;
+            }
+
+            lightboxSlideAnimationA = setTimeout(() => {
+                lightboxImageDOM.setAttribute("src", lightboxPosts[currentLightboxSlide].url);
+                lightboxPostDOM.classList.remove("animate", "left");
+                lightboxPostDOM.classList.add("in-right");
+
+                lightboxSlideAnimationB = setTimeout(() => {
+                    lightboxPostDOM.classList.remove("in-right");
+                }, 250);
+            }, 250);
+        } else if(e.target.classList.contains("lightbox-right")) {
+            clearTimeout(lightboxSlideAnimationA);
+            clearTimeout(lightboxSlideAnimationB);
+            lightboxPostDOM.classList.remove("in-right", "in-left", "animate", "left", "right");
+
+            lightboxPostDOM.classList.add("animate", "right");
+            
+            currentLightboxSlide++;
+            if(currentLightboxSlide >= lightboxPosts.length) {
+                currentLightboxSlide = 0;
+            }
+
+            lightboxSlideAnimationA = setTimeout(() => {
+                lightboxImageDOM.setAttribute("src", lightboxPosts[currentLightboxSlide].url);
+                lightboxPostDOM.classList.remove("animate", "right");
+                lightboxPostDOM.classList.add("in-left");
+
+                lightboxSlideAnimationB = setTimeout(() => {
+                    lightboxPostDOM.classList.remove("in-left");
+                }, 250);
+            }, 250);
         }
     });
 
