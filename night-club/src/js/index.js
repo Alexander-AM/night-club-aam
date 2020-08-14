@@ -163,26 +163,30 @@ document.addEventListener("DOMContentLoaded", async () => {
     const galleryItemsImgDOM = galleryContainerDOM.querySelectorAll(".gallery-item img");
 
     const resizeImageGallery = () => {
-        const result = partition_layout(galleryItemsImgDOM, {
-            containerWidth: document.documentElement.clientWidth,
-            idealElementHeight: 200,
-            spacing: 0,
-        });
-        
-        if(isNaN(result.height)) {
-            setTimeout(resizeImageGallery, 100);
-        } else {
-            galleryContainerDOM.style.height = result.height + "px";
-        
-            for(let i = 0; i < galleryItemsDOM.length; i++) {
-                galleryItemsDOM[i].style.left = result.positions[i].x + "px";
-                galleryItemsDOM[i].style.top = result.positions[i].y + "px";
-                galleryItemsDOM[i].style.width = result.positions[i].width + "px";
-                galleryItemsDOM[i].style.height = result.positions[i].height + "px";
+        if(document.documentElement.clientWidth >= 640) {
+            const result = partition_layout(galleryItemsImgDOM, {
+                containerWidth: document.documentElement.clientWidth,
+                idealElementHeight: 200,
+                spacing: 0,
+            });
+    
+            if(isNaN(result.height)) {
+                setTimeout(resizeImageGallery, 100);
+            } else {
+                galleryContainerDOM.style.height = result.height + "px";
+            
+                for(let i = 0; i < galleryItemsDOM.length; i++) {
+                    galleryItemsDOM[i].style.left = result.positions[i].x + "px";
+                    galleryItemsDOM[i].style.top = result.positions[i].y + "px";
+                    galleryItemsDOM[i].style.width = result.positions[i].width + "px";
+                    galleryItemsDOM[i].style.height = result.positions[i].height + "px";
+                }
             }
         }
     }
     resizeImageGallery();
+
+    window.addEventListener("resize", resizeImageGallery);
 
     // Animate
     window.addEventListener("scroll", () => {
